@@ -105,11 +105,11 @@ for ii = 1 : numel( H5.Groups)
         end
     end
     
-    for aa = 1 : numel( H5.Groups(2).Attributes )
-        field = H5.Groups(2).Attributes(aa).Name;
+    for aa = 1 : numel( H5.Groups(ii).Attributes )
+        field = H5.Groups(ii).Attributes(aa).Name;
         switch field
             case 'location'
-                YAML.location = H5.Groups(2).Attributes(aa).Value;
+                YAML.location = H5.Groups(ii).Attributes(aa).Value;
         end
     end
 end
