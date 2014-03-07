@@ -28,5 +28,5 @@ system(sprintf('%s git checkout gh-pages', strstart));
 system(sprintf('%s git pull upstream gh-pages', strstart));
 system(sprintf('%s git commit -m "Initialize GitHub pages"', strstart));
 system(sprintf('%s git push origin gh-pages', strstart));
-system(sprintf('%s git checkout master', strstart);
+system(sprintf('%s git checkout master', strstart));
 
