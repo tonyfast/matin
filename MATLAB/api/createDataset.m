@@ -4,7 +4,7 @@ function YAML = createDataset( filename );
 % Dictionary information is attached with a separate function
 H5 = h5info( filename );
 YAML = struct( 'layout','dataset');
-[~,YAML.title,~] = fileparts(xx.Filename);
+[~,YAML.title,~] = fileparts(filename);
 YAML.description = [];
 
 
