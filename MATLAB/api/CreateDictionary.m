@@ -70,6 +70,7 @@ assignin( 'base','aggregatevars',aggregatevars);
 if numel( aggregatevars ) > 0 |  numel( spatialvars ) > 0
     dict.name = dictionary;
     dict.description = '';
+    dict.layout = 'dictionary';
 end
 
 if numel( aggregatevars ) > 0
