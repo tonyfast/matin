@@ -42,7 +42,7 @@ else
                 wf = fliplr( strtok( fliplr( YAML.aggregate{ii}.workflow{jj}.native ), '/' ) );
                 if strcmp( wf, workflow )
                     for kk = 1 : numel( YAML.aggregate{ii}.workflow{jj}.output )
-                        aggregatevars = union( aggvars, YAML.aggregate{ii}.workflow{jj}.output{kk}.native );
+                        aggregatevars = union( aggregatevars, YAML.aggregate{ii}.workflow{jj}.output{kk}.native );
                     end
                 end
             end
