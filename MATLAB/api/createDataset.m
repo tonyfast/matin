@@ -76,7 +76,7 @@ for ii = 1 : numel( H5.Groups)
                     
                     
                     
-                    data = h5read( hh,strjoin( {dsetname, field},'/'));
+                    data = h5read( filename,strjoin( {dsetname, field},'/'));
                     for mm = 1 : numel(H5.Groups(ii).Groups(gg).Datasets(dd).Datatype.Type.Member);
                         YAML.aggregate{ii}.workflow{dsetid}.output{mm}.native = ...
                             H5.Groups(ii).Groups(gg).Datasets(dd).Datatype.Type.Member(mm).Name;
