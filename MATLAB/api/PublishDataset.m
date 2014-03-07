@@ -12,4 +12,6 @@ fprintf( fo,'%s', s );
 fprintf( fo, '---\n');
 fclose(fo)
 
-% system( 'git checkout master')
+system( sprintf( 'git add %s', fullfile( '_posts', datapage )) )
+system( sprintf( 'git commit -m "Added dataset %s"', fullfile( '_posts', datapage )) )
+system( 'git checkout master')
