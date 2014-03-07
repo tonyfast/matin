@@ -1,8 +1,8 @@
-function YAML = createDataset( H5 );
+function YAML = createDataset( filename );
 % H5 is an output structure from h5info'
 % YAML is an output structure from ReadYAML'
 % Dictionary information is attached with a separate function
-H5 = xx;
+H5 = h5info( filename );
 YAML = struct( 'layout','dataset');
 [~,YAML.title,~] = fileparts(xx.Filename);
 YAML.description = [];
