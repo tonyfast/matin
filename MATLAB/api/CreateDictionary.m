@@ -31,7 +31,7 @@ if israw
     end
     for ii = 1 : numel( YAML.spatial )
         for jj = 1 : numel( YAML.spatial{ii}.output )
-            spatialvars = union( aggregatevars, YAML.spatial{ii}.output{jj}.native );
+            spatialvars = union( spatialvars, YAML.spatial{ii}.output{jj}.native );
         end
     end
 else
