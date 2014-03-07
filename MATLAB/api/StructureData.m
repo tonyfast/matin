@@ -18,23 +18,6 @@ end
                 data{ii}.aggregate );
         end
         
-        if isfield( data{ii}.spatial, 'link')
-            if ischar( data{ii}.spatial.link )
-                data{ii}.spatial.link = cellstr(data{ii}.spatial.link);
-            end
-            h5writeatt( filename,  sprintf( '%s/%s',dsetname,'spatial'),'link', strjoin(data{ii}.spatial.link,';') );
-            rmfield( data{ii}.spatial, 'link')
-        end
-        
-        
-        if isfield( data{ii}.spatial, 'image')
-            if ischar( data{ii}.spatial.image )
-                data{ii}.spatial.image = cellstr(data{ii}.spatial.image);
-            end
-            h5writeatt( filename,  sprintf( '%s/%s',dsetname,'spatial'),'image', strjoin(data{ii}.spatial.image,';') );
-            rmfield( data{ii}.spatial, 'image')
-        end
-        
         if isfield( data{ii}, 'spatial')
             if writeall
                 h5writecompound( filename, ...
@@ -46,6 +29,23 @@ end
                     structfun( @(x)0, data{ii}.spatial,'UniformOutput',false) );
             end
         end
+        
+        if isfield( data{ii}, 'link')
+            if ischar( data{ii}.link )
+                data{ii}.link = cellstr(data{ii}.link);
+            end
+            h5writeatt( filename,  sprintf( '%s/%s',dsetname,'spatial'),'link', strjoin(data{ii}.link,';') );
+        end
+        
+        
+        if isfield( data{ii}, 'image')
+            if ischar( data{ii}.image )
+                data{ii}.image = cellstr(data{ii}.image);
+            end
+            h5writeatt( filename,  sprintf( '%s/%s',dsetname,'spatial'),'image', strjoin(data{ii}.image,';') );
+        end
+        
+        
         
         
     end
