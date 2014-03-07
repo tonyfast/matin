@@ -45,8 +45,9 @@ else
     end
 end
 
+WriteYaml( horzcat(dict.name,'.yml'), dict );
 system('git checkout gh-pages')
-WriteYaml( fullfile( '_data',horzcat(dict.name,'.yml')), dict );
+movefile( horzcat(dict.name,'.yml'), fullfile( '_data',horzcat(dict.name,'.yml')) );
 dictpage = sprintf( '%i-%0.2i-%0.2i-%s.markdown',t(1),t(2),t(3),dictionary);
 fo = fopen( fullfile( '_posts', dictpage ),'w'   );
 fprintf( fo, '---\n');
