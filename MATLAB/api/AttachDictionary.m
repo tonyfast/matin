@@ -55,7 +55,7 @@ fprintf( fo, 'layout: dictionary\n', dictpage );
 fprintf( fo, 'title:  %s\n', dictionary );
 fprintf( fo, '---\n');
 fclose(fo)
-system( sprintf( 'git add %s %s', fullfile( '_posts', dictpage )),fullfile( '_data',horzcat(dict.name,'.yml')) )
+system( sprintf( 'git add %s %s', fullfile( '_posts', dictpage ),fullfile( '_data',horzcat(dict.name,'.yml'))) )
 system( sprintf( 'git commit -m "Added dictionary %s"', fullfile( '_posts', dictpage )) )
 
 system('git checkout master -f')
