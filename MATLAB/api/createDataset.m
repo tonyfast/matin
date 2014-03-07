@@ -12,7 +12,7 @@ cc = {'Groups' 'Groups'};
 for ii = 1 : numel( H5.Groups)
     % This loop indexes the datasets
     
-    dsetname = H5.Groups(ii).Name; %dataset name
+    dsetname = H5.Groups(ii).Name %dataset name
     
     for dd = 1 : numel( H5.Groups(ii).Datasets );
         % Whether the dataset can be queried will be a file option in the
@@ -22,10 +22,9 @@ for ii = 1 : numel( H5.Groups)
             % The index is on the number of datasets
             case {'aggregate','Aggregate'}
                 
-                if ~isfield( YAML, 'aggregate' )
                     [ YAML.aggregate{ii}.name YAML.aggregate{ii}.native ] = ...
                         deal( dsetname(2:end) );
-                end
+               
                 YAML.aggregate{ii}.description = [];
                 
                 if numel( fieldnames(YAML.aggregate{ii}) )==0 dsetid = 0;
@@ -40,10 +39,8 @@ for ii = 1 : numel( H5.Groups)
                         getfield( data, YAML.aggregate{ii}.output{mm}.native );
                 end
             case {'spatial','Spatial'}
-                if ~isfield( YAML, 'spatial' )
                     [ YAML.spatial{ii}.name YAML.spatial{ii}.native ] = ...
                         deal( dsetname(2:end) );
-                end
                 YAML.spatial{ii}.description = [];
                 
                 for mm = 1 : numel(H5.Groups(ii).Datasets(dd).Datatype.Type.Member);
