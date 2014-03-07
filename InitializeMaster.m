@@ -9,3 +9,4 @@ fprintf( fo, '\nMATLAB');
 fprintf( fo, '\nInitializeMaster.m');
 fprintf( fo, '\nGitHubSetUp.m');
 fclose( fo );
+
