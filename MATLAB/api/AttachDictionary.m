@@ -1,18 +1,20 @@
-function YAML = attachDictionary( YAML, workflow, dictionary )
+function attachDictionary( YAML, workflow, dictionary )
 % if workflow is empty then work on the raw
 % dict goes in the top level of YAML
 %
 % if workflow has a value then look for the workflow name
-persistent crap
-
-numel(crap)
-
 if numel( workflow ) == 0;
     cc = {'output'};
     israw = true;
 else
     cc = {'workflow', 'output'};
     israw = false;
+end
+
+if ~exist( dictionary, 'file')
+    dict = CreateDictionary( YAML, [], dictionary);
+    t = clock;
+    dict.url = sprintf( '/%i/%0.2i/%0.2i/%s.html',t(1),t(2),t(3),dictionary)
 end
 
 
@@ -42,3 +44,14 @@ else
         end
     end
 end
+
+system('git checkout gh-pages')
+WriteYaml( fullfile( '_data',horzcat(dict.name,'.yml')), dict );
+dictpage = sprintf( '%i-%0.2i-%0.2i-%s.markdown',t(1),t(2),t(3),dictionary);
+fo = fopen( fullfile( '_posts', dictpage ),'w'   );
+fprintf( fo, '---\n');
+fprintf( fo, 'layout: dictionary\n', dictpage );
+fprintf( fo, 'title:  %s\n', dictionary );
+fprintf( fo, '---\n');
+fclose(fo)
+system('git checkout master -f')

@@ -12,7 +12,7 @@ cc = {'Groups' 'Groups'};
 for ii = 1 : numel( H5.Groups)
     % This loop indexes the datasets
     
-    dsetname = H5.Groups(ii).Name %dataset name
+    dsetname = H5.Groups(ii).Name; %dataset name
     
     for dd = 1 : numel( H5.Groups(ii).Datasets );
         % Whether the dataset can be queried will be a file option in the
