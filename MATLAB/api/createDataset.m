@@ -47,6 +47,22 @@ for ii = 1 : numel( H5.Groups)
                     YAML.spatial{ii}.output{mm}.native = ...
                         H5.Groups(ii).Datasets(dd).Datatype.Type.Member(mm).Name;
                 end
+                
+                if numel( H5.Groups(ii).Datasets(dd).Attributes) > 0
+                    for mm = 1: numel( H5.Groups(ii).Datasets(dd).Attributes) > 0
+                        switch H5.Groups(ii).Datasets(dd).Attributes(mm).Name
+                            case 'link'
+                                YAML.spatial{ii}.location = ...
+                                    H5.Groups(ii).Datasets(dd).Attributes(mm).Value;
+                            case 'image'
+                                urls = strtok( H5.Groups(ii).Datasets(dd).Attributes(mm).Value, ';');
+                                for qq = 1 : numel( urls )
+                                YAML.spatial{ii}.viz.location{qq} = ...
+                                    urls{qq};
+                                end
+                        end
+                    end
+                end
         end
     end
     
