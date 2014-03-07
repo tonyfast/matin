@@ -1,9 +1,9 @@
 function UpdateTemplate(issudo)
 
-if nargin == 0 || issudo
-    strstart = 'sudo';
-else
+if nargin == 0 || ~issudo
     strstart = '';
+else
+    strstart = 'sudo';
 end
 
 system(sprintf('%s git fetch upstream',strstart));
