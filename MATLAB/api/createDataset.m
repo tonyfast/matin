@@ -32,7 +32,7 @@ for ii = 1 : numel( H5.Groups)
                 else dsetid = numel(YAML.aggregate{ii}); end
                 % Read the aggregate values here
                 
-                data = h5read( hh,strjoin( {dsetname, field},'/'));
+                data = h5read( filename,strjoin( {dsetname, field},'/'));
                 for mm = 1 : numel(H5.Groups(ii).Datasets(dd).Datatype.Type.Member);
                     YAML.aggregate{ii}.output{mm}.native = ...
                         H5.Groups(ii).Datasets(dd).Datatype.Type.Member(mm).Name;
