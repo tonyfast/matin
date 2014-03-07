@@ -49,16 +49,20 @@ for ii = 1 : numel( H5.Groups)
                 end
                 
                 if numel( H5.Groups(ii).Datasets(dd).Attributes) > 0
-                    for mm = 1: numel( H5.Groups(ii).Datasets(dd).Attributes) > 0
+                    
+                    for mm = 1: numel( H5.Groups(ii).Datasets(dd).Attributes)
                         switch H5.Groups(ii).Datasets(dd).Attributes(mm).Name
                             case 'link'
                                 YAML.spatial{ii}.location = ...
                                     H5.Groups(ii).Datasets(dd).Attributes(mm).Value;
                             case 'image'
-                                urls = strtok( H5.Groups(ii).Datasets(dd).Attributes(mm).Value, ';');
+                               
+                                urls = strsplit( H5.Groups(ii).Datasets(dd).Attributes(mm).Value, ';');                                
                                 for qq = 1 : numel( urls )
-                                YAML.spatial{ii}.viz.location{qq} = ...
+                                YAML.spatial{ii}.viz{qq}.url = ...
                                     urls{qq};
+                                YAML.spatial{ii}.viz{qq}.name = ...
+                                    '';
                                 end
                         end
                     end
