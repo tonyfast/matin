@@ -47,15 +47,17 @@ end
 
 WriteYaml( horzcat(dict.name,'.yml'), dict );
 system('git checkout gh-pages')
-movefile( horzcat(dict.name,'.yml'), fullfile( '_data',horzcat(dict.name,'.yml')) );
 dictpage = sprintf( '%i-%0.2i-%0.2i-%s.markdown',t(1),t(2),t(3),dictionary);
-fo = fopen( fullfile( '_posts', dictpage ),'w'   );
-fprintf( fo, '---\n');
-fprintf( fo, 'layout: dictionary\n', dictpage );
-fprintf( fo, 'title:  %s\n', dictionary );
-fprintf( fo, '---\n');
-fclose(fo)
-system( sprintf( 'git add %s %s', fullfile( '_posts', dictpage ),fullfile( '_data',horzcat(dict.name,'.yml'))) )
-system( sprintf( 'git commit -m "Added dictionary %s"', fullfile( '_posts', dictpage )) )
+if ~exist( fullfile( '_posts', dictpage ), 'file' )
+    movefile( horzcat(dict.name,'.yml'), fullfile( '_data',horzcat(dict.name,'.yml')) );
+    fo = fopen( fullfile( '_posts', dictpage ),'w'   );
+    fprintf( fo, '---\n');
+    fprintf( fo, 'layout: dictionary\n', dictpage );
+    fprintf( fo, 'title:  %s\n', dictionary );
+    fprintf( fo, '---\n');
+    fclose(fo)
+    system( sprintf( 'git add %s %s', fullfile( '_posts', dictpage ),fullfile( '_data',horzcat(dict.name,'.yml'))) )
+    system( sprintf( 'git commit -m "Added dictionary %s"', fullfile( '_posts', dictpage )) )
+end
 
-system('git checkout master -f')
+system('git checkout master')
