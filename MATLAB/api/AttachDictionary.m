@@ -61,6 +61,8 @@ if ~exist( fullfile( '_data',horzcat(dict.name,'.yml')), 'file' )
     fclose(fo)
     system( sprintf( 'git add %s %s', fullfile( '_posts', dictpage ),fullfile( '_data',horzcat(dict.name,'.yml'))) )
     system( sprintf( 'git commit -m "Added dictionary %s"', fullfile( '_posts', dictpage )) )
+else
+    disp('exist')
 end
 
 system('git checkout master')
