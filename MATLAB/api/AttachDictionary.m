@@ -48,7 +48,7 @@ end
 
 system('git checkout gh-pages')
 dictpage = sprintf( '%i-%0.2i-%0.2i-%s.markdown',t(1),t(2),t(3),dictionary);
-if ~exist( fullfile( '_posts', dictpage ), 'file' )
+if ~exist( fullfile( '_data',horzcat(dict.name,'.yml')), 'file' )
     system('git checkout master')
     WriteYaml( horzcat(dict.name,'.yml'), dict );
     system('git checkout gh-pages')
