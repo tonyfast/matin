@@ -1,4 +1,10 @@
 function StructureData( filename, data, writeall )
+% Convert Matlab structure/record array to an HDF5 file.
+% filename - an .h5 file name
+% data - a structure array containing aggregate and spatial data.
+% writeall -  if writeall is true then all the spatial data will be
+% written.  false (default)
+
 if ~exist( 'writeall','var')
     writeall = false;
 end
