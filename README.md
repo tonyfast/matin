@@ -1,10 +1,9 @@
-# Getting Started:
-## Change ``name`` and ``baseurl`` in _config.yml 
+# Current Matin projects
 
-# Remember
-## Posts must obey the right structure
+* [Matin for Segmented Titanium](http://tonyfast.com/Titanium)
+* [Matin for Segmented Natural Materials Datasets](http://tonyfast.com/Natural-Materials)
+* [Matin for Karl Jacob's Polymer Molecular Dynamics Datasets](http://tonyfast.com/Polymer-MD)
 
-# Search occurs over bottom-up values
+# Links for collaboration
 
-# Collaboration Tools
-http://mashable.com/2014/03/06/file-sharing-tools/?utm_cid=mash-com-li-main-link
+* [Mashable's list of 22 tools for collaboration](http://mashable.com/2014/03/06/file-sharing-tools/?utm_cid=mash-com-li-main-link)
