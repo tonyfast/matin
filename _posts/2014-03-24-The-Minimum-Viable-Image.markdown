@@ -3,6 +3,8 @@ layout: post
 title: Two Steps for Efficient Publication of Data Visualization
 ---
 
+## The Process for Creating Visualization
+
 Often the protocol for collaboration is to
 
 1. Assign a task
@@ -11,7 +13,7 @@ Often the protocol for collaboration is to
 4. Iterate and Repeat
 
 This may sound lazy, but it is far more work that one may need to do.
-<hr>
+
 
 ## The Goal of Visualization
 
