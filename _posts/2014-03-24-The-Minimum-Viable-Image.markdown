@@ -48,6 +48,7 @@ A workflow for publishing MVI's
 
 By saving to the Dropbox public folder, your image is automatically public-facing on the web and it is easy to grab a static link to the image that can be shared.  This link may be fragile over the long-term.  A simple delete could render the link dead.   After a sufficient number of iterations,  a final version of the image will need to be made with a reliable permalink.
 
+
 ### Polishing up the final image
 
 Your MVI will go through many iterations.  You will learn how your visualizations are interpreted.  You will learn how communicate effectively.
@@ -57,7 +58,8 @@ After the learning process, you will want to publish a final image and share the
 * [Flickr](www.flickr.com)
 * [Plot.ly](plot.ly)
 * [d3js](http://d3js.org/)
-* [VTL](http://www.vtk.org/)
+* [VTK - The Visualization Toolkit](http://www.vtk.org/)
+
 
 ## Links
 
